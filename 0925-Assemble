@@ -13,21 +13,21 @@
 	pop	dl
 	end
 --------------------------------------------------------------------------------------------------
-	ORG 0
-	JMP INICIO
-	ORG 10
-	DB "BRASIL”
+	ORG 0			
+	JMP INICIO		//vai para o INICIO
+	ORG 10			//memoria para string inicia em 10
+	DB "BRASIL”		//eine a partir da posição 10 uma letra para cada endereço
 
-	ORG 20
-INICIO: MOV CL,C0
-	MOV BL,6
-	MOV DL,10
+	ORG 20			//inicia o programa a partir do endereço 20 e fecha todas as janelas abertas
+INICIO: MOV CL,C0		//coloca em cl o endereço inicial da memória de vídeo
+	MOV BL,6		//coloca em bl a qntd de caracteres
+	MOV DL,10		//cloca em dl o endereço inicial da área de memória onde a string começa
 
-PROX: 	MOV AL,[DL]
-	MOV [CL],AL
-	INC CL
-	INC DL
-	DEC BL
-	JNZ PROX
-	
+PROX: 	MOV AL,[DL]		//coloca em al o conteúdo do endereço armazenado em dl
+	MOV [CL],AL		//coloca em cl o valor contido em al
+	INC CL			//incrementa cl para que armazene o próximo endereço da memória
+	INC DL			//incrementa dl para que armazene o endreço onde está o próximo caractere
+	DEC BL			//decrementa o contador de caracteres restantes
+	JNZ PROX		//se contador for 0, flag de zero será setado e não ocorre o desvio,
+				//caso contrário repete a etapa PROX
 	END
