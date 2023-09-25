@@ -31,3 +31,29 @@ PROX: 	MOV AL,[DL]		//coloca em al o conteúdo do endereço armazenado em dl
 	JNZ PROX		//se contador for 0, flag de zero será setado e não ocorre o desvio,
 				//caso contrário repete a etapa PROX
 	END
+------------------------------------------------------------------------------------------------------
+	org 0
+	jmp	inicio
+	org	10
+	db	"marcelo honda kobayashi"
+		
+	org	40	
+inicio:	MOV	CL,c0
+	MOV	DL,2f
+	mov	bl,10
+							
+prox:	MOV	AL,[bl]
+	MOV	[CL],AL
+	INC	cl		
+	inc	bl
+	dec	dl
+	JNZ	PROX	
+	mov	cl,e0
+	MOV	DL,2f
+prox2:	mov	al,[bl]
+	mov	[cl],al
+	inc 	cl
+	dec 	bl
+	dec 	dl
+	jnz	prox2	
+	end
