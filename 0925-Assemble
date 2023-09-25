@@ -1,0 +1,13 @@
+  mov	al,FA            //aloca o valor FA em al
+	mov	bl,FB
+	mov	cl,FC
+	mov	dl,FD
+	
+	push	al             //salva o valor de al na pilha
+	push	bl
+	push 	cl
+	push	dl
+	pop	al               //retira o último elemento da pilha para o al
+	pop	bl
+	pop	cl
+	pop	dl
