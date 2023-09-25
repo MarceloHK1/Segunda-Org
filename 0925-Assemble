@@ -39,7 +39,7 @@ PROX: 	MOV AL,[DL]		//coloca em al o conteúdo do endereço armazenado em dl
 		
 	org	40	
 inicio:	MOV	CL,c0
-	MOV	DL,2f
+	MOV	DL,17
 	mov	bl,10
 							
 prox:	MOV	AL,[bl]
@@ -49,7 +49,8 @@ prox:	MOV	AL,[bl]
 	dec	dl
 	JNZ	PROX	
 	mov	cl,e0
-	MOV	DL,2f
+	MOV	DL,17
+	mov	bl,26
 prox2:	mov	al,[bl]
 	mov	[cl],al
 	inc 	cl
