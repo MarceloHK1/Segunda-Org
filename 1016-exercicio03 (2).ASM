@@ -1,4 +1,4 @@
-MOV	AL,00
+MOV	AL,00    //semaforo que liga as outras luzes apenas se receber input
 OUT	01
 MOV	AL,90
 OUT	01
