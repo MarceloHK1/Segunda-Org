@@ -1,4 +1,4 @@
-MOV	AL,00
+MOV	AL,00      //semaforo
 OUT	01
 MOV	AL,90
 OUT	01
