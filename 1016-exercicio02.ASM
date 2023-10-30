@@ -1,4 +1,4 @@
-MOV	AL,F5
+MOV	AL,F5    //display
 OUT	02
 MOV	AL,F0
 OUT	02
